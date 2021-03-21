@@ -1,0 +1,2 @@
+(this["webpackJsonpjs-band-store"]=this["webpackJsonpjs-band-store"]||[]).push([[0],{10:function(e,t,n){"use strict";n.r(t);var c=n(1),r=n.n(c),s=n(3),o=(n(8),n(0));var i=function(){return Object(o.jsx)("div",{children:Object(o.jsx)("h1",{children:"Hello!"})})};Object(s.render)(Object(o.jsx)(r.a.StrictMode,{children:Object(o.jsx)(i,{})}),document.getElementById("root"))},8:function(e,t,n){}},[[10,1,2]]]);
+//# sourceMappingURL=main.36492e71.chunk.js.map
