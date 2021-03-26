@@ -1,0 +1,18 @@
+.header {
+    &__top-inner {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-top: 10px;
+    }
+    &__bottom {
+        background-color: black;
+        line-height: normal;
+        &-inner {
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.button.button-primary {
+    background: #d1d1d1;
+    border-color: #d1d1d1;
+    &:hover {
+        background: #d1d1d1;
+        border-color: #d1d1d1;
+    }
+}
+
+.cart-empty {
+    width: 100%;
+    height: calc(100vh - 108px - 58px - 80px - 39px - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    
+    & > img {
+        height: 70px;
+        margin-left: -1.5rem;
+    }
+    & > span {
+        padding-top: 3rem;
+    }
+}
+
+.container {
+    position: relative;
+}

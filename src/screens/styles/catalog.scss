@@ -1,0 +1,17 @@
+@import './card.scss';
+
+.search > input {
+    width: 100%;
+}
+
+.mgtop-3rem {
+    margin-top: 3rem;
+}
+
+.catalog {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}

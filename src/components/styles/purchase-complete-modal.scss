@@ -1,0 +1,36 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba($color: #000000, $alpha: 0.5);
+}
+
+.modal-window {
+  background: #fff;
+  padding: 3rem;
+  margin-top: 165px;
+
+  &__inner {
+    background: #fff;
+    overflow-y: auto;
+    max-height: 225px;
+    width: 100%;
+  }
+}
+
+.close-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.row__total-price {
+  display: flex;
+  justify-content: flex-end;
+  padding: 3rem;
+}
+
+.cart-table {
+  width: 100%;
+}
