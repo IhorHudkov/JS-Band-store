@@ -1,0 +1,58 @@
+.book {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 3rem;
+  &__wrap {
+      display: flex;
+      align-items: flex-start;
+      justify-content: start;
+      flex-wrap: wrap;
+    &-image {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: flex-start;
+    }
+  }
+  &__image {
+    height: 300px;
+    width: 200px;
+    background-color: #ddd;
+  }
+  &__description {
+    width: 200px;
+  }
+  &__details {
+    padding-left: 3rem;
+  }
+  &__order {
+    width: 400px;
+    border: 1px solid #d1d1d1;
+    height: 100%;
+    padding: 3rem;
+    text-align: right;
+    &-price {
+        display: flex;
+        justify-content: space-between;
+    }
+    &-count {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        & > input {
+            max-width: 148px;
+        }
+    }
+    &-total-price {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+  }
+}
+
+main {
+  min-height: calc(100vh - 58px - 80px - 39px - 20px);
+}

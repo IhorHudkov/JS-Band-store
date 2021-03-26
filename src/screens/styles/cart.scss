@@ -1,0 +1,13 @@
+.purchase__btn, .total-price{
+    display: flex;
+    justify-content: flex-end;
+    padding: 3rem 0;
+}
+
+.cart-table {
+  width: 100%;
+}
+
+main {
+  min-height: calc(100vh - 58px - 80px - 39px - 20px);
+}
