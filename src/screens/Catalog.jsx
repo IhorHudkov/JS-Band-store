@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import fetchClient from '../models/FetchClient';
+import Card from '../components/Card';
 import './styles/icomoon.css';
 import './styles/catalog.scss';
-import bookCover from './images/book_cover.jpg';
 
 function ScreensCatalog() {
+  const [books, setBooks] = useState([]);
+  useEffect(() => {
+    fetchClient.getAllBooks(localStorage.getItem('token')).then(res => {
+      setBooks(prev => {
+        return prev.concat(res);
+      });
+    });
+  });
   return (
     <>
       <div className="row mgtop-3rem">
@@ -24,126 +33,18 @@ function ScreensCatalog() {
         </div>
       </div>
       <div className="catalog">
-        <div className="card">
-          <img src={bookCover} alt="img" className="card__img" height="180px" />
-          <p className="card__title">
-            <h5>Book of books</h5>
-          </p>
-          <p className="card__author">
-            <h6>Many authors</h6>
-          </p>
-          <div className="card__wrap">
-            <span>15$</span>
-            <button className="card__btn" type="button">
-              View
-            </button>
-          </div>
-        </div>
-        <div className="card">
-          <img src={bookCover} alt="img" className="card__img" height="180px" />
-          <p className="card__title">
-            <h5>Book of books</h5>
-          </p>
-          <p className="card__author">
-            <h6>Many authors</h6>
-          </p>
-          <div className="card__wrap">
-            <span>15$</span>
-            <button className="card__btn" type="button">
-              View
-            </button>
-          </div>
-        </div>{' '}
-        <div className="card">
-          <img src={bookCover} alt="img" className="card__img" height="180px" />
-          <p className="card__title">
-            <h5>Book of books</h5>
-          </p>
-          <p className="card__author">
-            <h6>Many authors</h6>
-          </p>
-          <div className="card__wrap">
-            <span>15$</span>
-            <button className="card__btn" type="button">
-              View
-            </button>
-          </div>
-        </div>{' '}
-        <div className="card">
-          <img src={bookCover} alt="img" className="card__img" height="180px" />
-          <p className="card__title">
-            <h5>Book of books</h5>
-          </p>
-          <p className="card__author">
-            <h6>Many authors</h6>
-          </p>
-          <div className="card__wrap">
-            <span>15$</span>
-            <button className="card__btn" type="button">
-              View
-            </button>
-          </div>
-        </div>{' '}
-        <div className="card">
-          <img src={bookCover} alt="img" className="card__img" height="180px" />
-          <p className="card__title">
-            <h5>Book of books</h5>
-          </p>
-          <p className="card__author">
-            <h6>Many authors</h6>
-          </p>
-          <div className="card__wrap">
-            <span>15$</span>
-            <button className="card__btn" type="button">
-              View
-            </button>
-          </div>
-        </div>
-        <div className="card">
-          <img src={bookCover} alt="img" className="card__img" height="180px" />
-          <p className="card__title">
-            <h5>Book of books</h5>
-          </p>
-          <p className="card__author">
-            <h6>Many authors</h6>
-          </p>
-          <div className="card__wrap">
-            <span>15$</span>
-            <button className="card__btn" type="button">
-              View
-            </button>
-          </div>
-        </div>
-        <div className="card">
-          <img src={bookCover} alt="img" className="card__img" height="180px" />
-          <p className="card__title">
-            <h5>Book of books</h5>
-          </p>
-          <p className="card__author">
-            <h6>Many authors</h6>
-          </p>
-          <div className="card__wrap">
-            <span>15$</span>
-            <button className="card__btn" type="button">
-              View
-            </button>
-          </div>
-        </div>
-        <div className="card">
-          <img src={bookCover} alt="img" className="card__img" height="180px" />
-          <p className="card__title">
-            <h5>Book of books</h5>
-          </p>
-          <p className="card__author">
-            <h6>Many authors</h6>
-          </p>
-          <div className="card__wrap">
-            <span>15$</span>
-            <button className="card__btn" type="button">
-              View
-            </button>
-          </div>
-        </div>
+        {books.map(book => {
+          return (
+            <Card
+              id={book.id}
+              img={book.cover}
+              title={book.title}
+              author={book.author}
+              price={book.price}
+              key={`${book.title}${book.id}`}
+            />
+          );
+        })}
       </div>
     </>
   );

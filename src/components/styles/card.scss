@@ -1,0 +1,33 @@
+.card {
+  flex: 0 0 1;
+  width: 245px;
+  border: 0.5px solid #d1d1d1;
+  padding: 2rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  &__wrap {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    word-wrap: break-word;
+    font-size: 2.4rem;
+    line-height: 1.5;
+    letter-spacing: -0.05rem;
+    font-weight: 300;
+  }
+  &__author {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    letter-spacing: 0;
+    font-weight: 300;
+  }
+  &__img {
+    margin-bottom: 3rem;
+  }
+}

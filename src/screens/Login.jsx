@@ -1,27 +1,39 @@
-import { React, useEffect } from 'react';
+import { React, useEffect, useRef, useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import './styles/login.scss';
 import man from './images/man.svg';
 import User from '../models/User';
 import fetchClient from '../models/FetchClient';
 
 function ScreensLogin() {
+  const [token, setToken] = useState('');
+  const form = useRef(null);
   useEffect(() => {
-    const user = new User('Vasya');
-    fetchClient.signIn(user).then(
-      () => {
-        console.log(user.token);
-        fetchClient.getAllBooks(user.token).then(res => console.log(res));
-        fetchClient.getBookById(user.token, 1).then(res => console.log(res));
-        fetchClient.buyBooks(user.token, 1).then(res => console.log(res));
-      },
-      error => console.log(error.message)
-    );
+    form.current.onsubmit = e => {
+      e.preventDefault();
+      const user = new User(form.userName);
+      fetchClient.signIn(user).then(
+        () => {
+          localStorage.setItem('token', user.token);
+          setToken(user.token);
+          // Cliconsole.log('LocalStorage', localStorage.getItem('token'));
+          // fetchClient.getAllBooks(user.token).then(res => console.log(res));
+          // fetchClient.getBookById(user.token, 1).then(res => console.log(res));
+          // fetchent.buyBooks(user.token, 1).then(res => console.log(res));
+        },
+        error => console.log(error.message)
+      );
+    };
   }, []);
+
+  if (token) {
+    return <Redirect to="/catalog" />;
+  }
   return (
     <div className="wrapper">
       <img src={man} alt="man" />
       <h3>Js Band Store</h3>
-      <form>
+      <form ref={form}>
         <label htmlFor="userName">Name</label>
         <input type="text" id="userName" />
         <button type="submit">Log In</button>
