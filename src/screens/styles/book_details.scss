@@ -5,14 +5,14 @@
   flex-wrap: wrap;
   padding-top: 3rem;
   &__wrap {
-      display: flex;
-      align-items: flex-start;
-      justify-content: start;
-      flex-wrap: wrap;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     &-image {
       display: flex;
       flex-direction: column;
-      justify-content: start;
+      justify-content: flex-start;
       align-items: flex-start;
     }
   }
@@ -26,6 +26,20 @@
   }
   &__details {
     padding-left: 3rem;
+    &-title {
+      font-size: 3rem;
+      line-height: 1.35;
+      letter-spacing: -0.08rem;
+      font-weight: 300;
+      word-wrap: break-word;
+      max-width: 260px;
+    }
+    &-author {
+      font-size: 1.5rem;
+      line-height: 1.6;
+      letter-spacing: 0;
+      font-weight: 300;
+    }
   }
   &__order {
     width: 400px;
@@ -34,21 +48,21 @@
     padding: 3rem;
     text-align: right;
     &-price {
-        display: flex;
-        justify-content: space-between;
+      display: flex;
+      justify-content: space-between;
     }
     &-count {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        & > input {
-            max-width: 148px;
-        }
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      & > input {
+        max-width: 148px;
+      }
     }
     &-total-price {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
     }
   }
 }

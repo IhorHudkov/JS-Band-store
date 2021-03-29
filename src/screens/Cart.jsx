@@ -10,24 +10,26 @@ function ScreensCart() {
         </button>
       </div>
       <table className="cart-table">
-        <tr>
-          <th>Name</th>
-          <th>Count</th>
-          <th>Price</th>
-          <th>Total</th>
-        </tr>
-        <tr>
-          <td>BigBen</td>
-          <td>10</td>
-          <td>17</td>
-          <td>23</td>
-        </tr>
-        <tr>
-          <td>BigBen</td>
-          <td>10</td>
-          <td>17</td>
-          <td>23</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <th>Count</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+          <tr>
+            <td>BigBen</td>
+            <td>10</td>
+            <td>17</td>
+            <td>23</td>
+          </tr>
+          <tr>
+            <td>BigBen</td>
+            <td>10</td>
+            <td>17</td>
+            <td>23</td>
+          </tr>
+        </tbody>
       </table>
       <div className="total-price">
         <span>Total Prise: 173$</span>
