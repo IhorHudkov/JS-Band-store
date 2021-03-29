@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/JS-Band-store/static/css/main.cb04ca4a.chunk.css",
-    "main.js": "/JS-Band-store/static/js/main.3a63cfdd.chunk.js",
-    "main.js.map": "/JS-Band-store/static/js/main.3a63cfdd.chunk.js.map",
+    "main.css": "/JS-Band-store/static/css/main.b9b83cb0.chunk.css",
+    "main.js": "/JS-Band-store/static/js/main.03835555.chunk.js",
+    "main.js.map": "/JS-Band-store/static/js/main.03835555.chunk.js.map",
     "runtime-main.js": "/JS-Band-store/static/js/runtime-main.af3d1462.js",
     "runtime-main.js.map": "/JS-Band-store/static/js/runtime-main.af3d1462.js.map",
-    "static/js/2.a9663a4f.chunk.js": "/JS-Band-store/static/js/2.a9663a4f.chunk.js",
-    "static/js/2.a9663a4f.chunk.js.map": "/JS-Band-store/static/js/2.a9663a4f.chunk.js.map",
+    "static/js/2.37fb8744.chunk.js": "/JS-Band-store/static/js/2.37fb8744.chunk.js",
+    "static/js/2.37fb8744.chunk.js.map": "/JS-Band-store/static/js/2.37fb8744.chunk.js.map",
     "index.html": "/JS-Band-store/index.html",
-    "static/css/main.cb04ca4a.chunk.css.map": "/JS-Band-store/static/css/main.cb04ca4a.chunk.css.map",
-    "static/js/2.a9663a4f.chunk.js.LICENSE.txt": "/JS-Band-store/static/js/2.a9663a4f.chunk.js.LICENSE.txt",
-    "static/media/book_cover.c9fe2bb1.jpg": "/JS-Band-store/static/media/book_cover.c9fe2bb1.jpg",
+    "static/css/main.b9b83cb0.chunk.css.map": "/JS-Band-store/static/css/main.b9b83cb0.chunk.css.map",
+    "static/js/2.37fb8744.chunk.js.LICENSE.txt": "/JS-Band-store/static/js/2.37fb8744.chunk.js.LICENSE.txt",
+    "static/media/black-cart.e11618bf.png": "/JS-Band-store/static/media/black-cart.e11618bf.png",
     "static/media/cart.010d5d26.png": "/JS-Band-store/static/media/cart.010d5d26.png",
     "static/media/icomoon.css": "/JS-Band-store/static/media/icomoon.ff27ecd9.woff",
-    "static/media/logo.5c2e1559.png": "/JS-Band-store/static/media/logo.5c2e1559.png"
+    "static/media/logo.5c2e1559.png": "/JS-Band-store/static/media/logo.5c2e1559.png",
+    "static/media/man.ad811078.svg": "/JS-Band-store/static/media/man.ad811078.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.af3d1462.js",
-    "static/js/2.a9663a4f.chunk.js",
-    "static/css/main.cb04ca4a.chunk.css",
-    "static/js/main.3a63cfdd.chunk.js"
+    "static/js/2.37fb8744.chunk.js",
+    "static/css/main.b9b83cb0.chunk.css",
+    "static/js/main.03835555.chunk.js"
   ]
 }
