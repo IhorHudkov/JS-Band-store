@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import './styles/card.scss';
 
-function Card({ img, title, author, price, key, id }) {
+function Card({ img, title, author, price, id }) {
   const history = useHistory();
   const button = useRef(null);
   useEffect(() => {
@@ -11,7 +11,7 @@ function Card({ img, title, author, price, key, id }) {
     };
   }, []);
   return (
-    <div className="card" key={key}>
+    <div className="card">
       <img src={img} alt="img" className="card__img" height="180px" />
       <p className="card__title">{title}</p>
       <p className="card__author">{author}</p>

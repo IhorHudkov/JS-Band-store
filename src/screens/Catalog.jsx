@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 import React, { useEffect, useState } from 'react';
 import fetchClient from '../models/FetchClient';
 import Card from '../components/Card';
@@ -6,13 +7,21 @@ import './styles/catalog.scss';
 
 function ScreensCatalog() {
   const [books, setBooks] = useState([]);
-  useEffect(() => {
-    fetchClient.getAllBooks(localStorage.getItem('token')).then(res => {
-      setBooks(prev => {
-        return prev.concat(res);
-      });
-    });
-  });
+
+  useEffect(async () => {
+    let cleanupFunction = false;
+    try {
+      const res = await fetchClient.getAllBooks(localStorage.getItem('token'));
+      if (!cleanupFunction)
+        setBooks(prev => {
+          return prev.concat(res);
+        });
+    } catch (e) {
+      console.log(e.message);
+    }
+    return () => (cleanupFunction = true);
+  }, []);
+
   return (
     <>
       <div className="row mgtop-3rem">
@@ -33,7 +42,7 @@ function ScreensCatalog() {
         </div>
       </div>
       <div className="catalog">
-        {books.map(book => {
+        {books.map((book, i) => {
           return (
             <Card
               id={book.id}
@@ -41,7 +50,7 @@ function ScreensCatalog() {
               title={book.title}
               author={book.author}
               price={book.price}
-              key={`${book.title}${book.id}`}
+              key={book.id ? `${i}${book.id}` : i}
             />
           );
         })}
