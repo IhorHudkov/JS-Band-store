@@ -27,9 +27,9 @@ function PurchaseCompleteModal({ visible }) {
                       <th>Price</th>
                       <th>Total</th>
                     </tr>
-                    {state.books.map(book => {
+                    {state.books.map((book, i) => {
                       return (
-                        <tr key={book.id}>
+                        <tr key={book.id + i}>
                           <td>{book.title}</td>
                           <td>{book.quantity}</td>
                           <td>{book.price}</td>
@@ -41,7 +41,7 @@ function PurchaseCompleteModal({ visible }) {
                 </table>
               </div>
               <div className="row__total-price">
-                <span>Total Price: 120$</span>
+                <span>Total Price: {state.totalPrice.toFixed(2)}$</span>
               </div>
               <div className="close-btn">
                 <Link to="/catalog" onClick={closeLinkClickHandler}>

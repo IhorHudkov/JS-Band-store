@@ -1,18 +1,33 @@
 .header {
-    &__top-inner {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        padding-top: 10px;
+  &__top-inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 10px;
+  }
+  &__bottom {
+    background-color: black;
+    line-height: normal;
+    &-inner {
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    &__bottom {
-        background-color: black;
-        line-height: normal;
-        &-inner {
-            height: 80px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    &-cart-btn {
+      position: relative;
     }
+    &-cart-counter {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background-color: rgb(255, 31, 31);
+      border-radius: 55%;
+      top: 34px;
+      right: 43px;
+      color: white;
+      text-align: center;
+      font-size: 13px;
+    }
+  }
 }

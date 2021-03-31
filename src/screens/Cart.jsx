@@ -30,9 +30,9 @@ function ScreensCart() {
               <th>Price</th>
               <th>Total</th>
             </tr>
-            {state.books.map(book => {
+            {state.books.map((book, i) => {
               return (
-                <tr key={book.id}>
+                <tr key={book.id + i}>
                   <td>{book.title}</td>
                   <td>{book.quantity}</td>
                   <td>{book.price}</td>

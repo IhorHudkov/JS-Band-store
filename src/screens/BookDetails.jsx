@@ -33,6 +33,7 @@ function ScreensBookDetails() {
             quantity: Number(countInput.current.value)
           }
         ],
+        quantity: Number(countInput.current.value),
         totalPrice: (bookInfo.price * countInput.current.value).toFixed(2)
       })
     );
