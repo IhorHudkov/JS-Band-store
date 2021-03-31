@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch, connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import fetchClient from '../models/FetchClient';
+import { addToCart } from '../redux/actions';
 import './styles/book_details.scss';
 
 function ScreensBookDetails() {
+  const dispatch = useDispatch();
   const { id } = useParams();
   const [bookInfo, setBookInfo] = useState({});
   const countInput = useRef();
@@ -11,9 +14,7 @@ function ScreensBookDetails() {
   useEffect(() => {
     fetchClient.getBookById(localStorage.getItem('token'), id).then(res => {
       console.log(res);
-      setBookInfo(prev => {
-        return { ...prev, ...res };
-      });
+      setBookInfo(prev => ({ ...prev, ...res }));
     });
   }, []);
 
@@ -22,6 +23,21 @@ function ScreensBookDetails() {
       ? (bookInfo.price * countInput.current.value).toFixed(2)
       : '';
   };
+
+  const addToCartBtnClickHandler = () => {
+    dispatch(
+      addToCart({
+        book: [
+          {
+            ...bookInfo,
+            quantity: Number(countInput.current.value)
+          }
+        ],
+        totalPrice: (bookInfo.price * countInput.current.value).toFixed(2)
+      })
+    );
+  };
+
   return (
     <div className="book">
       <div className="book__wrap">
@@ -67,7 +83,11 @@ function ScreensBookDetails() {
           </p>
           <span ref={totalPrice} />
         </div>
-        <button className="button button-primary" type="button">
+        <button
+          className="button button-primary"
+          type="button"
+          onClick={addToCartBtnClickHandler}
+        >
           Add to Cart
         </button>
       </div>
@@ -75,4 +95,4 @@ function ScreensBookDetails() {
   );
 }
 
-export default ScreensBookDetails;
+export default connect()(ScreensBookDetails);

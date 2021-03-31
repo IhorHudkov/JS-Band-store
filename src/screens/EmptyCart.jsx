@@ -1,13 +1,22 @@
 import React from 'react';
-import './styles/cart.scss';
 import './styles/empty_cart.scss';
 import blackCart from './images/black-cart.png';
+
+const btnStyles = {
+  background: '#d1d1d1',
+  borderColor: '#d1d1d1'
+};
 
 function ScreensEmptyCart() {
   return (
     <>
       <div className="purchase__btn">
-        <button className="button button-primary" type="button" disabled>
+        <button
+          className="button button-primary"
+          type="button"
+          disabled
+          style={btnStyles}
+        >
           Purchase
         </button>
       </div>

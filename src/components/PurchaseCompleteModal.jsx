@@ -1,83 +1,61 @@
 import React from 'react';
+import { connect, useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { emptyCart } from '../redux/actions';
 import './styles/purchase-complete-modal.scss';
 
-function PurchaseCompleteModal() {
-  return (
-    <div className="modal">
-      <div className="modal-overlay">
-        <div className="container">
-          <div className="modal-window">
-            <div className="modal-window__inner">
-              <table className="cart-table">
-                <tbody>
-                  <tr>
-                    <th>Name</th>
-                    <th>Count</th>
-                    <th>Price</th>
-                    <th>Total</th>
-                  </tr>
-                  <tr>
-                    <td>BigBen</td>
-                    <td>10</td>
-                    <td>17</td>
-                    <td>23</td>
-                  </tr>
-                  <tr>
-                    <td>BigBen</td>
-                    <td>10</td>
-                    <td>17</td>
-                    <td>23</td>
-                  </tr>
-                  <tr>
-                    <td>BigBen</td>
-                    <td>10</td>
-                    <td>17</td>
-                    <td>23</td>
-                  </tr>
-                  <tr>
-                    <td>BigBen</td>
-                    <td>10</td>
-                    <td>17</td>
-                    <td>23</td>
-                  </tr>
-                  <tr>
-                    <td>BigBen</td>
-                    <td>10</td>
-                    <td>17</td>
-                    <td>23</td>
-                  </tr>
-                  <tr>
-                    <td>BigBen</td>
-                    <td>10</td>
-                    <td>17</td>
-                    <td>23</td>
-                  </tr>
-                  <tr>
-                    <td>BigBen</td>
-                    <td>10</td>
-                    <td>17</td>
-                    <td>23</td>
-                  </tr>
-                  <tr>
-                    <td>BigBen</td>
-                    <td>10</td>
-                    <td>17</td>
-                    <td>23</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="row__total-price">
-              <span>Total Price: 120$</span>
-            </div>
-            <div className="close-btn">
-              <a href="https://google.com">Close</a>
+function PurchaseCompleteModal({ visible }) {
+  const dispatch = useDispatch();
+  const state = useSelector(store => store.cart);
+
+  const closeLinkClickHandler = () => {
+    dispatch(emptyCart());
+  };
+
+  if (visible) {
+    return (
+      <div className="modal">
+        <div className="modal-overlay">
+          <div className="container">
+            <div className="modal-window">
+              <div className="modal-window__inner">
+                <table className="cart-table">
+                  <tbody>
+                    <tr>
+                      <th>Name</th>
+                      <th>Count</th>
+                      <th>Price</th>
+                      <th>Total</th>
+                    </tr>
+                    {state.books.map(book => {
+                      return (
+                        <tr key={book.id}>
+                          <td>{book.title}</td>
+                          <td>{book.quantity}</td>
+                          <td>{book.price}</td>
+                          <td>{(book.quantity * book.price).toFixed(2)}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+              <div className="row__total-price">
+                <span>Total Price: 120$</span>
+              </div>
+              <div className="close-btn">
+                <Link to="/catalog" onClick={closeLinkClickHandler}>
+                  Close
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <></>;
+  }
 }
 
-export default PurchaseCompleteModal;
+export default connect()(PurchaseCompleteModal);

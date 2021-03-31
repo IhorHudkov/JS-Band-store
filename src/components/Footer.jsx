@@ -6,7 +6,7 @@ function Footer() {
     <footer className="footer">
       <p>
         Made with <span style={{ color: '#e25555' }}>&#9829;</span> by
-        <a href="https://www.linkedin.com/in/igor-gudkov/">Ihor Hudkov</a>
+        <a href="https://www.linkedin.com/in/igor-gudkov/"> Ihor Hudkov</a>
       </p>
     </footer>
   );
