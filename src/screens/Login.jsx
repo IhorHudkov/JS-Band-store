@@ -16,10 +16,6 @@ function ScreensLogin() {
         () => {
           localStorage.setItem('token', user.token);
           setToken(user.token);
-          // Cliconsole.log('LocalStorage', localStorage.getItem('token'));
-          // fetchClient.getAllBooks(user.token).then(res => console.log(res));
-          // fetchClient.getBookById(user.token, 1).then(res => console.log(res));
-          // fetchent.buyBooks(user.token, 1).then(res => console.log(res));
         },
         error => console.log(error.message)
       );
