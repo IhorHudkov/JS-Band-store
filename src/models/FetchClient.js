@@ -1,6 +1,6 @@
 import User from './User';
 
-class FetchClient {
+export class FetchClient {
   constructor() {
     if (FetchClient.exists) return FetchClient.instance;
     FetchClient.exists = true;
