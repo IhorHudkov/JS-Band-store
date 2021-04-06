@@ -12,7 +12,7 @@ const store = createStore(rootReducer, composeWithDevTools());
 
 render(
   <Provider store={store}>
-    <Router basename="/JS-Band-store">
+    <Router>
       <App />
     </Router>
   </Provider>,
