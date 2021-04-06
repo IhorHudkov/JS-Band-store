@@ -1,24 +1,24 @@
 {
-    "extends": [ "airbnb","plugin:prettier/recommended", "prettier/react"],
-    "parser": "babel-eslint",
-    "parserOptions": { "sourceType": "module" },
-    "rules": {
-      "prettier/prettier": ["error", { "singleQuote": true }],
-      "quotes": [2, "single", { "avoidEscape": true }],
-      "jsx-a11y/label-has-associated-control": "off",
-      "react/jsx-filename-extension": "off",
-      "no-underscore-dangle":"off",
-      "no-useless-escape":"off",
-      "no-console":"off",
-      "no-alert":"off",
-      "no-undef":"off",
-      "no-param-reassign":"off",
-      "import/prefer-default-export": "off",
-      "no-else-return":"off",
-      "react/prop-types":"off",
-      "react/jsx-props-no-spreading":"off",
-      "react/no-array-index-key":"off",
-      "consistent-return":"off",
-      "no-return-assign":"off"
-    }
+  "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
+  "parser": "babel-eslint",
+  "parserOptions": { "sourceType": "module" },
+  "rules": {
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/jsx-filename-extension": "off",
+    "no-underscore-dangle": "off",
+    "no-useless-escape": "off",
+    "no-console": "off",
+    "no-alert": "off",
+    "no-undef": "off",
+    "no-param-reassign": "off",
+    "import/prefer-default-export": "off",
+    "no-else-return": "off",
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "off",
+    "consistent-return": "off",
+    "no-return-assign": "off"
+  }
 }
